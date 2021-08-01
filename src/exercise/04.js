@@ -15,6 +15,16 @@ function Board() {
       return
     }
 
+    // 🦉 It's typically a bad idea to mutate or directly change state in React.
+    // Doing so can lead to subtle bugs that can easily slip into production.
+    //
+    // 🐨 make a copy of the squares array
+    // 💰 `[...squares]` will do it!)
+    //
+    // 🐨 set the value of the square that was selected
+    // 💰 `squaresCopy[square] = nextValue`
+    //
+    // 🐨 set the squares to your copy
     const squaresCopy = [...squares]
     squaresCopy[square] = nextValue
     setSquares(squaresCopy)
